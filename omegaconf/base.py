@@ -82,6 +82,7 @@ class Metadata:
 class ContainerMetadata(Metadata):
     key_type: Any = None
     element_type: Any = None
+    linecol = None
 
     def __post_init__(self) -> None:
         if self.ref_type is None:

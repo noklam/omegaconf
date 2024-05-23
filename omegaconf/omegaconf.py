@@ -859,6 +859,7 @@ class OmegaConf:
                     or obj is None
                 ):
                     if isinstance(obj, DictConfig):
+                        print("Is DictConfig")
                         return DictConfig(
                             content=obj,
                             parent=parent,

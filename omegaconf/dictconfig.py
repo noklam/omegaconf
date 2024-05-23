@@ -68,8 +68,10 @@ class DictConfig(BaseContainer, MutableMapping[Any, Any]):
         element_type: Union[Any, Type[Any]] = Any,
         is_optional: bool = True,
         flags: Optional[Dict[str, bool]] = None,
+        linecol: Optional[Any] = None,
     ) -> None:
         try:
+            print("DEBUG")
             if isinstance(content, DictConfig):
                 if flags is None:
                     flags = content._metadata.flags
@@ -83,6 +85,7 @@ class DictConfig(BaseContainer, MutableMapping[Any, Any]):
                     key_type=key_type,
                     element_type=element_type,
                     flags=flags,
+                    linecol = linecol
                 ),
             )
 
